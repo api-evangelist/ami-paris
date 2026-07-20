@@ -1,0 +1,28 @@
+generated: '2026-07-17'
+method: searched
+source: https://www.amiparis.com/.well-known/openid-configuration
+docs: https://shopify.dev/docs/api/customer
+note: >-
+  AMI Paris runs on Shopify. Storefront product/collection browsing is
+  unauthenticated (public JSON endpoints). Authenticated customer access uses the
+  Shopify Customer Account OIDC/OAuth2 authorization server (issuer scoped to this
+  store's merchant id 77478658352). The UCP agent-commerce MCP endpoint additionally
+  requires an agent-profile handshake.
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode]
+  pkce: S256
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  type: openIdConnect
+  issuer: https://shopify.com/authentication/77478658352
+  openid_configuration: well-known/ami-paris-openid-configuration.json
+  authorization_endpoint: https://shopify.com/authentication/77478658352/oauth/authorize
+  token_endpoint: https://shopify.com/authentication/77478658352/oauth/token
+  jwks_uri: https://shopify.com/authentication/77478658352/.well-known/jwks.json
+  grant_types: [authorization_code, refresh_token, 'urn:ietf:params:oauth:grant-type:jwt-bearer']
+  response_types: [code]
+  code_challenge_methods: [S256]
+  token_endpoint_auth_methods: [client_secret_basic]
+  id_token_signing_alg: [RS256]
+  scopes: [openid, email, 'customer-account-api:full', 'customer-account-mcp-api:full']
