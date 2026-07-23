@@ -1,8 +1,28 @@
 aid: ami-paris
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ami-paris.png
 name: AMI Paris
-description: 'AMI Paris is a company surfaced as a portfolio company of hongshan and added to the API
-  Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  AMI Paris is a French contemporary ready-to-wear fashion house founded in 2011
+  by Alexandre Mattiussi and headquartered in Paris, known for its "Ami de coeur"
+  heart logo. It sells menswear, womenswear, and accessories direct-to-consumer
+  through amiparis.com, an online store built on Shopify. The store exposes a real
+  agent-commerce surface: a Universal Commerce Protocol (UCP, ucp.dev) MCP endpoint
+  advertised in /.well-known/ucp, a published /llms.txt and /agents.md with agent
+  instructions, Shopify Customer Account OIDC/OAuth2 authentication, and read-only
+  product/collection JSON endpoints. It was surfaced as a portfolio company of
+  HongShan (Sequoia China) and profiled by the API Evangelist enrichment pipeline.
 url: https://raw.githubusercontent.com/api-evangelist/ami-paris/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -16,7 +36,35 @@ modified: '2026-07-17'
 tags:
 - Company
 - Consumer
-apis: []
+- Fashion
+- Retail
+- Ecommerce
+- Shopify
+- Agent Commerce
+- UCP
+apis:
+- name: AMI Paris Agent Commerce (UCP)
+  description: >-
+    Agent-facing commerce surface for the AMI Paris Shopify storefront — a Universal
+    Commerce Protocol (UCP) MCP endpoint for catalog search, cart, checkout,
+    fulfillment, discount, and order operations, plus unauthenticated storefront
+    product/collection JSON browsing. Checkout requires explicit buyer approval.
+  humanURL: https://www.amiparis.com/llms.txt
+  baseURL: https://www.amiparis.com
+  tags:
+  - Agent Commerce
+  - UCP
+  - MCP
+  - Ecommerce
+  properties:
+  - type: MCPServer
+    url: mcp/ami-paris-mcp.yml
+  - type: LLMsTxt
+    url: llms/ami-paris-llms.txt
+  - type: Authentication
+    url: authentication/ami-paris-authentication.yml
+  - type: OAuthScopes
+    url: scopes/ami-paris-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +73,28 @@ maintainers:
 common:
 - type: Website
   url: https://amiparis.com
+- type: Login
+  url: https://www.amiparis.com/account/login
+- type: Support
+  url: https://www.amiparis.com/pages/contact-us
+- type: PrivacyPolicy
+  url: https://www.amiparis.com/policies/privacy-policy
+- type: MCPServer
+  url: mcp/ami-paris-mcp.yml
+- type: LLMsTxt
+  url: llms/ami-paris-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/ami-paris-well-known.yml
+- type: Authentication
+  url: authentication/ami-paris-authentication.yml
+- type: OAuthScopes
+  url: scopes/ami-paris-scopes.yml
+- type: DomainSecurity
+  url: security/ami-paris-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

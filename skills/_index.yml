@@ -1,0 +1,13 @@
+generated: '2026-07-17'
+method: searched
+source: https://www.amiparis.com/agents.md
+skills:
+- file: ami-paris-agents.md
+  name: AMI Paris agent instructions (agents.md)
+  description: >-
+    Provider-published canonical agent-facing instructions for the AMI Paris
+    Shopify storefront — how AI agents discover, browse, and transact via the
+    Universal Commerce Protocol (UCP) MCP endpoint, plus read-only product/collection
+    JSON browsing and the buyer-approval invariant on checkout.
+  api: mcp/ami-paris-mcp.yml
+  verbatim: true

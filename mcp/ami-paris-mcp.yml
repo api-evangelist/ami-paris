@@ -1,0 +1,52 @@
+generated: '2026-07-17'
+method: searched
+status: published
+source: https://www.amiparis.com/.well-known/ucp
+docs: https://www.amiparis.com/llms.txt
+note: >-
+  AMI Paris runs on Shopify, which exposes a native Universal Commerce Protocol
+  (UCP, ucp.dev) agent-commerce surface over MCP. The MCP endpoint is advertised
+  in the store's /.well-known/ucp merchant profile and /llms.txt. Anonymous
+  tools/list is rejected (HTTP 422 invalid_profile_url) — the server requires an
+  agent-profile URI handshake before listing tools, so the tools below are the
+  documented UCP shopping capabilities from the merchant profile and llms.txt,
+  not a live tools/list dump.
+server:
+  name: ami-paris-ucp
+  transport: http
+  protocol: UCP
+  url: https://amiparis-prod.myshopify.com/api/ucp/mcp
+  storefront: https://www.amiparis.com
+  versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  buyer_approval_required: true
+  rate_limited: true
+capabilities:
+- dev.ucp.shopping.catalog.search
+- dev.ucp.shopping.catalog.lookup
+- dev.ucp.shopping.cart
+- dev.ucp.shopping.checkout
+- dev.ucp.shopping.fulfillment
+- dev.ucp.shopping.discount
+- dev.ucp.shopping.order
+- dev.shopify.catalog
+payment_handlers:
+- com.google.pay
+- dev.shopify.card
+tools:
+- name: search_catalog
+  description: Find products matching a buyer's intent (UCP catalog search).
+  source: https://www.amiparis.com/llms.txt
+- name: create_cart
+  description: Add desired items to a cart.
+  source: https://www.amiparis.com/llms.txt
+- name: create_checkout
+  description: Start the purchase flow for a cart.
+  source: https://www.amiparis.com/llms.txt
+- name: update_checkout
+  description: Set shipping address and shipping method on a checkout.
+  source: https://www.amiparis.com/llms.txt
+- name: complete_checkout
+  description: Finalize the purchase — requires explicit buyer payment approval.
+  source: https://www.amiparis.com/llms.txt
