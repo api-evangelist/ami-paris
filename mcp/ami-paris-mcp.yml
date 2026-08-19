@@ -3,14 +3,11 @@ method: searched
 status: published
 source: https://www.amiparis.com/.well-known/ucp
 docs: https://www.amiparis.com/llms.txt
-note: >-
-  AMI Paris runs on Shopify, which exposes a native Universal Commerce Protocol
-  (UCP, ucp.dev) agent-commerce surface over MCP. The MCP endpoint is advertised
-  in the store's /.well-known/ucp merchant profile and /llms.txt. Anonymous
-  tools/list is rejected (HTTP 422 invalid_profile_url) — the server requires an
-  agent-profile URI handshake before listing tools, so the tools below are the
-  documented UCP shopping capabilities from the merchant profile and llms.txt,
-  not a live tools/list dump.
+note: AMI Paris runs on Shopify, which exposes a native Universal Commerce Protocol (UCP, ucp.dev) agent-commerce
+  surface over MCP. The MCP endpoint is advertised in the store's /.well-known/ucp merchant profile and
+  /llms.txt. Anonymous tools/list is rejected (HTTP 422 invalid_profile_url) — the server requires an
+  agent-profile URI handshake before listing tools, so the tools below are the documented UCP shopping
+  capabilities from the merchant profile and llms.txt, not a live tools/list dump.
 server:
   name: ami-paris-ucp
   transport: http
@@ -50,3 +47,11 @@ tools:
 - name: complete_checkout
   description: Finalize the purchase — requires explicit buyer payment approval.
   source: https://www.amiparis.com/llms.txt
+deployment:
+  mode: remote
+  endpoint: https://amiparis-prod.myshopify.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
