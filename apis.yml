@@ -38,6 +38,15 @@ tags:
 - Consumer
 - Fashion
 - Retail
+- E-Commerce
+- Shopify
+- Agent Commerce
+- UCP
+tags_raw:
+- Company
+- Consumer
+- Fashion
+- Retail
 - Ecommerce
 - Shopify
 - Agent Commerce
@@ -52,6 +61,11 @@ apis:
   humanURL: https://www.amiparis.com/llms.txt
   baseURL: https://www.amiparis.com
   tags:
+  - Agent Commerce
+  - UCP
+  - MCP
+  - E-Commerce
+  tags_raw:
   - Agent Commerce
   - UCP
   - MCP
