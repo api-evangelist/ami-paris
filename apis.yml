@@ -70,7 +70,6 @@ apis:
     fulfillment, discount, and order operations, plus unauthenticated storefront
     product/collection JSON browsing. Checkout requires explicit buyer approval.
   humanURL: https://www.amiparis.com/llms.txt
-  baseURL: https://www.amiparis.com
   tags:
   - Agentic Commerce
   - Universal Commerce Protocol
@@ -90,6 +89,9 @@ apis:
     url: authentication/ami-paris-authentication.yml
   - type: OAuthScopes
     url: scopes/ami-paris-scopes.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: ucp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
