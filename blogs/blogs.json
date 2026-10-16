@@ -1,0 +1,21 @@
+{
+  "repo": "ami-paris",
+  "feeds": [
+    {
+      "source": "https://www.amiparis.com/collections/unisex-new-arrivals",
+      "feed_url": "https://www.amiparis.com/collections/unisex-new-arrivals.atom",
+      "title": "",
+      "saved": 6,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.amiparis.com/collections/unisex-new-arrivals.atom",
+      "feed_url": "https://www.amiparis.com/collections/unisex-new-arrivals.atom",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "post_count": 6,
+  "fetched": "2026-10-10T13:15:00Z"
+}
