@@ -5,7 +5,7 @@
       "source": "https://www.amiparis.com/collections/unisex-new-arrivals",
       "feed_url": "https://www.amiparis.com/collections/unisex-new-arrivals.atom",
       "title": "",
-      "saved": 6,
+      "saved": 0,
       "method": "discovered"
     },
     {
@@ -16,6 +16,6 @@
       "method": "feed"
     }
   ],
-  "post_count": 6,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 23,
+  "fetched": "2026-10-17T14:53:57Z"
 }
